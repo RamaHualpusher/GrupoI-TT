@@ -1,0 +1,33 @@
+# Grupo I TT
+Miembros del grupo : 
+Palavesino Facundo
+Kevin Dalla
+Ramiro  Hualpa
+Brandon Muñoz
+Gaston Poblete
+
+Tema propuesto :
+App de Servicios Delivery
+
+herramientas propuestas:
+Tecnologías de desarrollo
+    Se va a crear una aplicación web responsiva para todo dispositivo con las tecnologías web( HTML, CSS y JS ) y el uso de TypeScript para poder interactuar con la librería “Leaflet Routing Machine” de “Open Street Map” (específicamente se elige éste lenguaje para manipular los objetos tipo JSON generados por la API) y todas las eventualidades necesarias.
+
+IDE a utilizar: 
+Visual Studio Code
+
+Bases de datos a utilizar:
+SQL Server
+Microsoft SQL Server es un sistema de gestión de base de datos relacional, desarrollado por la empresa Microsoft. El lenguaje de desarrollo utilizado es Transact-SQL, una implementación del estándar ANSI del lenguaje SQL, utilizado para manipular y recuperar datos, crear tablas y definir relaciones entre ellas.
+
+Seleccionamos SQL Server ya que en nuestro proyecto, vamos a almacenar una gran cantidad de registros, correspondientes a los usuarios finales, vendedores, delivery, etc.
+
+También almacenaremos los registros de cada venta/envío realizado, con sus respectivos horarios.
+Decidimos utilizar SQL Server ya que estableceremos relaciones con claves primarias entre distintas tablas, para obtener una base de datos relacional.
+
+
+Herramienta Versionado: 
+GIT  - remoto GitHub
+
+
+
