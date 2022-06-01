@@ -1,0 +1,15 @@
+#myMap {
+    width: 100vw;
+    height: 100vh;
+}
+.leaflet-routing-container{
+    background-color: rgba(174, 255, 127, 0.445);
+    opacity: 0.5;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.leaflet-routing-container:hover{
+    opacity: 0.9;
+}
+.leaflet-routing-container:focus{
+    opacity: 0.9;
+}
