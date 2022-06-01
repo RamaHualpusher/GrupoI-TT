@@ -1,4 +1,5 @@
-#myMap {
+.myMap-cont {
+    display: block;
     width: 100vw;
     height: 100vh;
 }
@@ -12,4 +13,30 @@
 }
 .leaflet-routing-container:focus{
     opacity: 0.9;
+}
+.info-mapa-cont{
+    display: block;
+    z-index: 1000;
+    position: fixed;
+    bottom: 0px;
+    background-color: rgba(255, 255, 255, 0.5);
+    height: 15vh;
+    width: 100%;
+}
+.info-mapa-cont:hover{
+    display: block;
+    background-color: rgba(255, 255, 255, 0.8);
+    /*height: 25vh;*/
+    cursor: pointer;
+}
+.info-mapa-cont-titulo{
+    padding: 0;
+    margin: 10px;
+    font-size: 1.5em;
+    color: rgb(46, 126, 0);
+}
+.info-mapa-cont p {
+    margin: 10px;
+    font-size: 1.2em;
+    color: rgb(46, 126, 0);
 }
