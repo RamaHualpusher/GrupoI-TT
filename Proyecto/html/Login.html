@@ -28,30 +28,31 @@
                     <div class="col-12 col-md-9 col-lg-7 col-xl-6">
                         <div class="card">
                             <div class="card-body p-5">
-                                <h2 class="text-uppercase text-center mb-5">Sign in</h2>
+                                <h2 class="text-uppercase text-center mb-5">Inicio sesión</h2>
                                 <form>
 
                                     <div class="form-outline mb-4">
-                                        <input type="text" id="form3Example1cg" class="form-control form-control-lg" />
-                                        <label class="form-label" for="form3Example1cg">Your Username</label>
+                                        
+                                        <input type="text" id="nombre" class="form-control form-control-lg"  id="nombreIn" />
+                                        <label class="form-label" for="form3Example1cg">Usuario</label>
+                                      
                                     </div>
 
-                                    <div class="form-outline mb-4">
-                                        <input type="email" id="form3Example3cg" class="form-control form-control-lg" />
-                                        <label class="form-label" for="form3Example3cg">Your Email</label>
-                                    </div>
+                                
 
                                     <div class="form-outline mb-4">
-                                        <input type="password" id="form3Example4cg"
+                                        <input type="password" id="contrasena"
                                             class="form-control form-control-lg" />
-                                        <label class="form-label" for="form3Example4cg">Password</label>
+                                        <label class="form-label" for="form3Example4cg">Contraseña</label>
                                     </div>
 
                                     <div class="d-flex justify-content-center">
-                                        <button type="button"
-                                            class="btn btn-success btn-block btn-lg gradient-custom-4 text-body">Login</button>
+                                        <button type="button" 
+                                        class="btn btn-success btn-block btn-lg gradient-custom-4 text-body"
+                                        onclick="consultarLogin()"
+                                        >Iniciar</button>
                                     </div>
-                                    <a href="#">Forgot Password?</a>
+                                   
 
                                 </form>
 
@@ -70,6 +71,12 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF"
         crossorigin="anonymous"></script>
+
+        <script src="/login.js" type="module"></script>
+
+      
+
+       
 </body>
 
 </html>
