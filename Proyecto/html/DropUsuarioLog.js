@@ -23,3 +23,9 @@ window.onclick = (e) => {
         removeActive()
     }
 }
+// Ocultar Imagen en un lapso de tiempo
+var esconder
+setTimeout(() => {
+    esconder = document.getElementById("hide");
+    esconder.style.display= "none";
+  }, 5000);

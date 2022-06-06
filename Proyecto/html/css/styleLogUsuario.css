@@ -1,13 +1,13 @@
 body{
     background-color: rgb(74, 203, 247);
  }
- .container{
+ /* .container{
     width: 100%;
     max-width: 100%;
     margin: auto;
     overflow: hidden;
     box-sizing: border-box;
- }
+ } */
  .navbar{
     width: 100%;
     max-width: 100%;
@@ -93,10 +93,6 @@ body{
 
 
 
-.drop-wrapper{
-   position: relative;
-}
-
 .drop-menu{
    display: none;
    position: absolute;
@@ -131,6 +127,7 @@ body{
    text-decoration: none;
    color: #343434;
 }
+
 
  @media screen and (max-width: 800px) {
     .sidebar{
