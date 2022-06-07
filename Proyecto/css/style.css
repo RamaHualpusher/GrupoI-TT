@@ -7,13 +7,14 @@
     background-color: rgba(174, 255, 127, 0.445);
     opacity: 0.5;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    height: 30vh;
+    overflow: scroll;
 }
 .leaflet-routing-container:hover{
     opacity: 0.9;
+    height: 40vh;
 }
-.leaflet-routing-container:focus{
-    opacity: 0.9;
-}
+
 .info-mapa-cont{
     display: block;
     z-index: 1000;
@@ -24,11 +25,13 @@
     width: 100%;
 }
 .info-mapa-cont:hover{
+
     display: block;
     background-color: rgba(255, 255, 255, 0.8);
-    /*height: 25vh;*/
+    height: 25vh;
     cursor: pointer;
 }
+
 .info-mapa-cont-titulo{
     padding: 0;
     margin: 10px;
@@ -36,7 +39,11 @@
     color: rgb(46, 126, 0);
 }
 .info-mapa-cont p {
-    margin: 10px;
+    margin: 7px;
     font-size: 1.2em;
     color: rgb(46, 126, 0);
 }
+
+
+
+
