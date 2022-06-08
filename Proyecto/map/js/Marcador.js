@@ -8,7 +8,7 @@ let iconMarker = L.icon({
 });
 
 export function agregarMarcador(coord){
-    let marcador = L.marker(coord, { icon: iconMarker }).addTo(myMap);
+    let marcador = L.marker(coord, { icon: iconMarker });//! VEREMOS SI SE AGREGA PORQUE SE PINTA DOS VECES .addTo(myMap);
     return marcador;
 }
 export function removerMarcador(mark){
