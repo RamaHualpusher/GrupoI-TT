@@ -14,6 +14,8 @@ L.tileLayer(`https://tile.openstreetmap.org/{z}/{x}/{y}.png`, {
 // let ruta2 = crearRutaMark(marcadorCentral,marcadorDestino);
 // let ruta3 = crearRutaMark(marcadorDestino, marcadorDestino2);
 
+
+
 let infoEnvio = document.getElementById("info-mapa");
 // let infoComercioDomicilio = document.getElementById("dom-comercio");
 // let infoClienteDomicilio = document.getElementById("dom-cliente");
@@ -23,6 +25,9 @@ let usuario1 = ["Benito Escamoso", [-32.8972, -68.853448]];
 let comercio1 = [ "Calle San Martin 718","McDonald",[-32.894, -68.839]];
 let cliente1 = ["Calle Godoy Cruz 6520","Roberto Benitez",[-32.859, -68.821]];
 let pedido = [1530, 350]
+
+
+//!CREAR RUTAS CON MARCADORES DE ENVIO Y COMERCIO
 
 
 let ruta1 = crearRutaMark(agregarMarcador(usuario1[1]),agregarMarcador(comercio1[2]));
