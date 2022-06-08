@@ -24,8 +24,16 @@ window.consultarLogin =
                     nombre = json.name; //declaramos el nombre obtenido del objeto
                     idUsuario=json.id;
                     guardarCookie('cookIdUsuario',idUsuario,"31 Dec 2023 23:59:59 GMT") //guardamos en cookie el id del usuario 
-                    alert("Bienvenido " + nombre);
-                    window.open("./home.html", "_self"); //abro nuevo html
+                    //! SI FUERA NECESARIO SUMARLE A LA HORA DE CREACION UNA HORA DE DESTRUCCION CALCULADA POR EL TIEMPO DE SESION
+                    //! PARA QUE NO SE DESTRUYA LA COOKIE AL CERRAR LA PAGINA
+                    //! POR EJEMPLO SI EL USUARIO TIENE UNA SESION DE 30 MINUTOS
+                    //! SE CREARA UNA COOKIE CON EL ID DEL USUARIO Y SE DESTRUIRIA EN EL MINUTO 30
+
+                    //* AL CERRAR SESION EL USUARIO SE DESTRUYE LA COOKIE
+                    //* POR EJEMPLO SI EL USUARIO TIENE UNA SESION DE 30 MINUTOS
+                    
+                    //alert("Bienvenido " + nombre);
+                    window.open("./Home.html", "_self"); //abro nuevo html
                 } catch (error) {//Si no hay conexión con el backend mostramos error
                     alert("Error! contraseña y/o nombre incorrecto");
                 }

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
@@ -7,23 +7,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
         integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+        <link rel="stylesheet" href="./css/normalize.css">
     <link rel="stylesheet" href="./css/style.css">
-    <title>Document</title>
+    <title>Pingüilivery</title>
 </head>
 
 <body>
     <header>
         <!-- -------------------------Navegador------------------------------------------- -->
         <nav class="navbar navbar-light bg-light">
-            <a class="navbar-brand"><img id="logo" src="Imagen/lp.png" alt="Pinguino" width="50"> Pinguilivery </a>
-            <form class="form-inline">
+            <div class="navbar-brand">
+                <a href="#" ><img id="logo" src="./img/lp.png" alt="Pinguino" width="50"> Pingüilivery </a>
+            </div>
+            <!-- <form class="form-inline">
                 <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
                 <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-            </form>
+            </form> -->
             <form class="form-inline">
                 <a class="ingresar" href="./Login.html">Ingresar </a>
 
-                <a href="./Registro.html"> Registrar</a>
+                <a class="registro" href="./Registro.html"> Registrar</a>
             </form>
             
 
@@ -35,24 +38,24 @@
 
         <div class="sidebar">
             <ul class="texto">
-                <h1> Pinguilivery </h1>
+                <h1> Pingüilivery </h1>
                 <h3>Nuestro destino es tu confianza</h3>
             </ul>
-            <img src="./Imagen/lp.png" alt="pingui">
+            <img src="./img/lp.png" alt="pingui">
         </div>
 
         <!-- -------------------------------------Carousel------------------------------------------ -->
 
         <div id="carouselExampleInterval" class="carousel slide" data-ride="carousel">
             <div class="carousel-inner">
-                <div class="carousel-item active" >
-                    <img src="./Imagen/delivery1.jpg" class="d-block w-100" alt="...">
+                <div class="carousel-item active" data-interval="10000">
+                    <img src="./img/delivery1.jpg" class="d-block w-100" alt="...">
                 </div>
                 <div class="carousel-item" data-interval="2000">
-                    <img src="./Imagen/recibido 2.jpg" class="d-block w-100" alt="...">
+                    <img src="./img/recibido 2.jpg" class="d-block w-100" alt="...">
                 </div>
                 <div class="carousel-item">
-                    <img src="./Imagen/recibido.jpg" class="d-block w-100" alt="...">
+                    <img src="./img/recibido.jpg" class="d-block w-100" alt="...">
                 </div>
             </div>
             <button class="carousel-control-prev" type="button" data-target="#carouselExampleInterval"

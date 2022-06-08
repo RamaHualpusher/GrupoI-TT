@@ -10,12 +10,13 @@ a:link{
     margin-left: 10px;
     text-decoration: none;
 }
-.botonera .boton-cancelar{
+.botones_container .boton-cancelar{
     margin: 0 0 0 10px;
     text-decoration: none;    
 }
-.botonera .boton-cancelar a{
+.botones_container .boton-cancelar a{
     color: white;
+    
     border-radius: 5px;
     padding: 5px;
     text-decoration: none;

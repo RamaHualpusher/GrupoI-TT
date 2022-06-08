@@ -1,72 +1,99 @@
+body {
+  background-color: rgb(74, 203, 247);
+}
+.container {
+  width: 100%;
+  max-width: 100%;
+  margin: auto;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+.navbar {
+  width: 100%;
+  padding: 0;
+}
+.navbar-brand{
+   padding: 0px 10px;
+   margin: 0;
+  
+}
+.navbar-brand a{
+   color: rgb(0, 0, 0);
+}
+.navbar-brand:hover{
+   /* background-color: rgb(226, 226, 226); */
+  box-shadow: 2px 1px 19px 1px rgba(0, 0, 0, 0.15);
+  -webkit-box-shadow: 2px 1px 19px 1px rgba(0, 0, 0, 0.15);
+  -moz-box-shadow: 2px 1px 19px 1px rgba(0, 0, 0, 0.15);
+}
 
-
-body{
+.form-inline .ingresar{
+   background-color: rgb(0, 0, 0);
+   color: rgb(255, 255, 255);
+   border: none;
+   border-radius: 5px;
+   padding: 10px 20px;
+   /* margin-left: 10px; */
+}
+.form-inline .registro{
+   background-color: rgb(0, 0, 0);
+   color: rgb(255, 255, 255);
+   border: none;
+   border-radius: 5px;
+   padding: 10px 20px;
+   margin-left: 5px;
+}
+.form-inline .ingresar:hover{
    background-color: rgb(74, 203, 247);
+   color: rgb(0, 0, 0);
 }
-.container{
-   width: 100%;
-   max-width: 100%;
-   margin: auto;
-   overflow: hidden;
-   box-sizing: border-box;
-}
-.navbar{
-   width: 100%;
+.form-inline .registro:hover{
+   background-color: rgb(74, 203, 247);
+   color: rgb(0, 0, 0);
 }
 
-a:link{
-text-decoration: none;
+a:link {
+  text-decoration: none;
 }
 
-.ingresar {
-   
-   margin-right: 15px;
-   margin-left: 15px;
-}
 .texto {
-
-   margin-top: 30px;
-   float: left;
+  margin-top: 30px;
+  float: left;
 }
 .texto > h1 {
-    text-align: center;
-    font-size: 30px;
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  text-align: center;
+  font-size: 30px;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
 }
 .texto > h3 {
-   font-size: 20px;
+  font-size: 20px;
 }
-.sidebar{
-   float: left;
-   height: 40%;
-   width: 50%;
-   padding: 20px;
-   box-sizing: border-box;
-
-
-
+.sidebar {
+  float: left;
+  height: 40%;
+  width: 50%;
+  padding: 20px;
+  box-sizing: border-box;
 }
 .sidebar > img {
-   margin-left: 60px;
+  margin-left: 60px;
 }
 
-.carousel{
-   float: left;
-   height: 40%;
-   width: 50%;
-   padding-top: 80px;
-   padding-right: 40px;
+.carousel {
+  float: left;
+  height: 40%;
+  width: 50%;
+  padding-top: 80px;
+  padding-right: 40px;
 }
-.carousel-inner{
-   border: 10px solid black;
-
+.carousel-inner {
+  border: 10px solid black;
 }
 @media screen and (max-width: 800px) {
-   .sidebar{
-      width: 100%;
-   }
-    .carousel{
-       width: 100%;
-    }
+  .sidebar {
+    width: 100%;
+  }
+  .carousel {
+    width: 100%;
+  }
 }
-

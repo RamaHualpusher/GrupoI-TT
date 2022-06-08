@@ -53,6 +53,7 @@ window.registrarUsuario =
 
 
 
+    
 
 
 function validarCompleto(nombre, contrasena) {
