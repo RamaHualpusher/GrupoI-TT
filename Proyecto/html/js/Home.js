@@ -24,18 +24,44 @@ window.onclick = (e) => {
     }
 }
 // Ocultar Imagen en un lapso de tiempo
-var esconder
+var esconder = document.getElementById("hide");
+var formulario = document.getElementById("formulario");
+var pedido  = document.getElementById("pedido");
+let temporizador;
 setTimeout(() => {
-    esconder = document.getElementById("hide");
+
     esconder.style.display= "none";
+    formulario.style.display= " block";
+    temporizador =setInterval(intervalPedido,3000);
   }, 3000);
+  // Pedidos en un intervalo de tiempo,agrega la clase de movimiento de entrada
+ function intervalPedido(){
+  pedido.classList.add('animate__backInRight');
+  pedido.style.display= "block";
+ }
+ //eliminar div de pedido al presionar el boton, remueve la clase de movimiento de salida
+ function nonePedido(){
+  clearInterval(temporizador);
+  pedido.style.display= "none";
+  pedido.classList.remove('animate__backOutRight');
+ }
+ 
+//Cuando el boton se presione ,remueve movimiento de entrada,add el movimiento de salida,llama metodos recirsion
+  const boton = document.getElementById("boton");
+ function aceptarPedido() {
+      pedido.classList.remove('animate__backInRight');
+      pedido.classList.add('animate__backOutRight');
+      setTimeout(nonePedido,2000)
+      setInterval(intervalPedido,6000);
+
+  }
 
 
 
 //----------------------- Conexión Backend ----------------//
 
 
-  import { host, puerto } from "./config.js";
+  // import { host, puerto } from "./config.js";
 let url;
 let idUsuario =leerCookie('cookIdUsuario'); //traigo idUsuario desde las cookie
 

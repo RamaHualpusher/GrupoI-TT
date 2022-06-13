@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
         integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
     <link rel="stylesheet" href="./css/styleHome.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
     <title>Home - Pingüilivery</title>
 </head>
 
@@ -45,42 +46,62 @@
 
     </header>
 
+    <!-- <div class="container"> -->
+            <div class="sidebar " id="hide">
+                <ul class="texto"> 
+                    <h1 id="nombre"> </h1>
+                </ul>
+                <div  class="divImagen">
+                    <img  id ="imagen1"src="./img/check.png"alt="pingui">
+                </div>   
+            </div>
 
-        <div class="sidebar " id="hide">
-            <ul class="texto"> 
-                <h1 id="nombre"> </h1>
-            </ul>
-            <div  class="divImagen">
-                <img  id ="imagen1"src="./img/check.png"alt="pingui">
-            </div>   
+        <div class="containerFormulario  animate__backInUp"  id="formulario">
+            <!-- Perfil del usuario -->
+                
+            <div>
+                <h3>Perfil de Usuario</h3>
+                <ul>
+                    <li id="nombrePerf">Nombre: </li>
+                    <li id="tipoPerf">Tipo: </li>
+                    <li id="user">User: </li>
+                    
+                    
+                </ul>
+            </div>
+
+                <br>
+                <!-- Envios pendientes -->
+            <div>
+                <h3>Envios pendientes</h3>
+                <ul>
+                    <li id="envio">envio: </li>
+                    <li id="monto">monto: </li>
+                    <li id="hora">hora: </li>
+                    <li id="ntrans">ntrans: </li>
+                    
+                </ul>
+            </div>
         </div>
 
+        <div class="containerPedido  " id="pedido">
+            <h3>Pedido Entrante</h3>
+            <ul>
+                <li id="#">Cliente:</li>
+                <li id="#">Pedido: </li>
+                <li id="#">Pecio:</li>
+                <li id="#">Ubicacion:</li>
 
-       <!-- Perfil del usuario -->
-    
-       <div>
-        <h3>Perfil de Usuario</h3>
-        <ul>
-            <li id="nombrePerf">Nombre: </li>
-            <li id="tipoPerf">Tipo: </li>
-            <li id="user">User: </li>
-            
-            
-        </ul>
-    </div>
+            </ul>
+            <button id="boton" onclick="aceptarPedido()">Tomar</button>
+            <button id="botn" onclick="aceptarPedido()">Rechazar</button>
+        </div>
 
-        <br>
-           <!-- Envios pendientes -->
-    <div>
-        <h3>Envios pendientes</h3>
-        <ul>
-            <li id="envio">envio: </li>
-            <li id="monto">monto: </li>
-            <li id="hora">hora: </li>
-            <li id="ntrans">ntrans: </li>
-            
-        </ul>
-    </div>
+    <!-- </div> -->
+
+
+        
+       
 
     
 
@@ -93,7 +114,7 @@
         integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF"
         crossorigin="anonymous"></script>
 
-    <script  type="module" src="./js/Home.js" ></script>
+    <script  src="./js/Home.js" ></script>
     
 </body>
 
