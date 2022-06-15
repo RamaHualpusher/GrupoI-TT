@@ -31,6 +31,9 @@
     height: 25vh;
     cursor: pointer;
 }
+.info-mapa-cont-hide{
+    display: none;
+}
 
 .info-mapa-cont-titulo{
     padding: 0;
@@ -38,6 +41,7 @@
     font-size: 1.5em;
     color: rgb(46, 126, 0);
 }
+
 .info-mapa-cont p {
     margin: 7px;
     font-size: 1.2em;

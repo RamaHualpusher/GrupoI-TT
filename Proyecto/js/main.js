@@ -1,7 +1,9 @@
 import { agregarMarcador } from "./Marcador.js";
-import {crearRuta, crearRutaMark} from "./Enrutador.js";
+import {crearRutaMark} from "./Enrutador.js";
+import {} from "./leaflet-routing-machine.js";
 
-export let myMap = L.map('myMap').setView([-32.8972, -68.853448],14)//Usar latitud y longitud del usuario
+export let myMap = L.map('myMap').setView([-32.8972, -68.853448],14);//Usar latitud y longitud del usuario
+
 
 L.tileLayer(`https://tile.openstreetmap.org/{z}/{x}/{y}.png`, {
 	maxZoom: 18,
@@ -28,11 +30,51 @@ let pedido = [1530, 350]
 
 
 //!CREAR RUTAS CON MARCADORES DE ENVIO Y COMERCIO
+let latLngUsuario = L.latLng(usuario1[1]);
+let latLngComercio = L.latLng(comercio1[2]);
+let latLngCliente = L.latLng(cliente1[2]);
 
 
-let ruta1 = crearRutaMark(agregarMarcador(usuario1[1]),agregarMarcador(comercio1[2]));
-let ruta2 = crearRutaMark(agregarMarcador(comercio1[2]),agregarMarcador(cliente1[2]));
+// let mark1 = agregarMarcador(latLngUsuario);
+// let mark2 = agregarMarcador(latLngComercio);
+// let mark3 = agregarMarcador(latLngCliente);
 
+// let capas = L.layerGroup();
+// capas.addLayer(mark1);
+// capas.addLayer(mark2);
+// capas.addLayer(mark3);
+
+// console.log(capas);
+// myMap.removeLayer(capas);
+let ruta1 = crearRutaMark(latLngUsuario,latLngComercio);
+let ruta2 = crearRutaMark(latLngComercio,latLngCliente);
+
+// myMap.removeLayer(mark1);
+// myMap.removeLayer(mark2);
+// myMap.removeLayer(mark3);
+// setTimeout(() => {
+// 	myMap.removeLayer(ruta1);
+// 	myMap.removeLayer(ruta2);
+// }, 5000);
+
+//Agregar un temporizador de 1 minuto para que se elimine la ruta
+setTimeout(() => {
+	ruta1.spliceWaypoints(0, 2);
+	ruta1.hide();
+	// myMap.removeLayer(mark1);
+	myMap.removeLayer(ruta1);
+
+}, 2000);
+setTimeout(() => {
+	ruta2.spliceWaypoints(0,2);
+	ruta2.hide();
+	myMap.removeLayer(ruta2);
+	
+	// myMap.removeLayer(mark2);
+	// myMap.removeLayer(mark3);
+
+
+}, 4000);
 
 
 // console.log(ruta1.getRouter());
