@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
         integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
     <link rel="stylesheet" href="./css/styleHome.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
     <title>Home - Pingüilivery</title>
 </head>
 
@@ -15,9 +16,9 @@
     <header>
         <!-- -------------------------Navegador------------------------------------------- -->
         <nav class="navbar navbar-light bg-light">
-            <a class="navbar-brand"><img id="logo" src="./img/lp.png" alt="Pinguino" width="50"> Pingüilivery </a>
+            <a class="navbar-brand" href="./index.html"><img id="logo" src="./img/lp.png" alt="Pinguino" width="50"> Pingüilivery </a>
             <div class="divUbicacion">
-                <a href="./Map.html"><img id="imagen3" src="./img/Point.webp" alt="Point">Map</a>
+                <a href="./Login.html" id="cerrarSesionBtn" onclick="cerrarSesion()"><img id="imagen3" src="./img/poder.png" alt="Point">Cerrar sesion</a>
             </div>
             <ul class="navbar-nav">
     
@@ -29,7 +30,7 @@
                         <!-- -----------------------------Lista de Perfil de Usuario- la clase dp(metodo de JS)----- -->
                         <a class="nav-link dp"  data-target="#dropleft" href="#"><img class = "imgUsuario " src="./img/user.png" alt="Usuario"></a>
                         <div class="drop-menu dropleft" id="dropleft">
-                            <a href="#">Name User</a>
+                            <a href="./Registro.html" id="nombreIco" ></a>
 
                           </div>
 
@@ -42,18 +43,66 @@
 
         </nav>
         <!-- ----------------------------------------------texto------------------------------------------- -->
+
     </header>
-        
-        
-        
-        <div class="sidebar " id="hide">
-            <ul class="texto">
-                <h1> Bienvenido Usuario </h1>
-            </ul>
-            <div  class="divImagen">
-                <img  id ="imagen1"src="./img/check.png"alt="pingui">
-            </div>   
+
+    <!-- <div class="container"> -->
+            <div class="sidebar " id="hide">
+                <ul class="texto"> 
+                    <h1 id="nombre"> </h1>
+                </ul>
+                <div  class="divImagen">
+                    <img  id ="imagen1"src="./img/check.png"alt="pingui">
+                </div>   
+            </div>
+
+        <div class="containerFormulario  animate__backInUp"  id="formulario">
+            <!-- Perfil del usuario -->
+                
+            <div>
+                <h3>Perfil de Usuario</h3>
+                <ul>
+                    <li id="nombrePerf">Nombre: </li>
+                    <li id="tipoPerf">Tipo: </li>
+                    <li id="user">User: </li>
+                    
+                    
+                    
+                </ul>
+            </div>
+
+                <br>
+                <!-- Envios pendientes -->
+      
         </div>
+
+        <div class="containerPedido  " id="pedido">
+            <h3>Pedido Entrante</h3>
+            <ul>
+                <li id="nPedido">asd Pedido:</li> 
+                <li id="cliente">Cliente:</li>
+                <li id="pedidoE">Pedido: </li>
+                <li id="precio">Pecio:</li>
+                <li id="precioEnvio">Precio Envio:</li>
+                <li id="local">Local:</li>
+                <li id="ubicacion">Ubicacion:</li>
+                <li id="fecha">Fecha: </li>
+
+            </ul>
+            <button id="boton" type="module"  onclick="aceptarPedido()">Tomar</button>
+            <button id="botn" type="module"  onclick="rechazarPedido()">Rechazar</button>
+        </div>
+
+    <!-- </div> -->
+
+
+        
+       
+
+    
+
+
+
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
         integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
         crossorigin="anonymous"></script>
@@ -61,7 +110,8 @@
         integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF"
         crossorigin="anonymous"></script>
 
-    <script src="./js/Home.js"></script>
+    <script type="module" src="./js/Home.js" ></script>
+    
 </body>
 
 </html>

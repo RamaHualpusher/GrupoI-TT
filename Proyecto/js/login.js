@@ -32,7 +32,7 @@ window.consultarLogin =
                     //* AL CERRAR SESION EL USUARIO SE DESTRUYE LA COOKIE
                     //* POR EJEMPLO SI EL USUARIO TIENE UNA SESION DE 30 MINUTOS
                     
-                    alert("Bienvenido " + nombre);
+                    //alert("Bienvenido " + nombre);
                     window.open("./Home.html", "_self"); //abro nuevo html
                 } catch (error) {//Si no hay conexión con el backend mostramos error
                     alert("Error! contraseña y/o nombre incorrecto");

@@ -1,13 +1,7 @@
 body{
     background-color: rgb(74, 203, 247);
  }
- /* .container{
-    width: 100%;
-    max-width: 100%;
-    margin: auto;
-    overflow: hidden;
-    box-sizing: border-box;
- } */
+
  .navbar{
     width: 100%;
     max-width: 100%;
@@ -42,6 +36,17 @@ body{
  .divUbicacion{
    text-align: center;
    padding-right: 100px;
+
+ }
+ .divUbicacion:hover{
+   background-color: rgb(212, 244, 255);
+   padding: 10px;
+ }
+ .divUbicacion a{
+   text-decoration: none;
+   color: #343434;
+   font-size: 1.2em;
+
  }
 
 
@@ -65,7 +70,34 @@ body{
  a:link{
  text-decoration: none;
  }
- 
+ .container{
+    background-color: darkblue;
+   
+ }
+ .containerFormulario{
+    margin-left: 500px;
+   position: absolute;
+   margin-top: 50px;
+   width: 400px;
+   background-color: greenyellow;
+   animation: bounce; 
+  animation-duration: 2s; 
+  display: none;
+  }  
+  .containerPedido{
+   display: none;
+   margin-left: 950px;
+   margin-top: 50px;
+   width: 400px;
+   height: 300px;
+   background-color: red; 
+   animation: bounce; 
+   animation-duration: 2s; 
+  }  
+  .containerPedido > button{
+     margin-left: 50px;
+     width: 100px;
+  }
  .texto {
  
     margin-top: 30px;
@@ -133,4 +165,8 @@ body{
     .sidebar{
        width: 100%;
     }
+ }
+
+ @keyframes tiempoAnimation{
+
  }
