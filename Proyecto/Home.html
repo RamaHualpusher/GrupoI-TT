@@ -18,7 +18,7 @@
         <nav class="navbar navbar-light bg-light">
             <a class="navbar-brand" href="./index.html"><img id="logo" src="./img/lp.png" alt="Pinguino" width="50"> Pingüilivery </a>
             <div class="divUbicacion">
-                <a href="./Login.html" id="cerrarSesionBtn" onclick="cerrarSesion()"><img id="imagen3" src="./img/poder.png" alt="Point">Cerrar sesion</a>
+                <a  id="cerrarSesionBtn" onclick="cerrarSesion()"><img id="imagen3" src="./img/poder.png" alt="Point">Cerrar sesion</a>
             </div>
             <ul class="navbar-nav">
     
@@ -56,6 +56,35 @@
                 </div>   
             </div>
 
+
+
+
+            <div class="containerTable  animate__backInUp"  id="table">
+                <!-- Tabla de pedidos finalizados -->
+                    
+                <div>
+                    <h3>Pedidos Entregados</h3>
+                   
+                     		<table id="tbl-pedidos" class="table table-dark table-sm">
+					<thead>
+                        <tr> <class="text-center roboto-medium">
+								<th>PEDIDO</th>
+								<th>CLIENTE</th>
+								<th>LOCAL</th>
+								<th>FECHA</th>
+								<th>PROPINA</th>
+							</tr>
+						</thead>
+
+                        <tbody>
+						
+						</tbody>
+					</table>
+                    
+                </div>
+                    <br>
+            </div>
+
         <div class="containerFormulario  animate__backInUp"  id="formulario">
             <!-- Perfil del usuario -->
                 
@@ -72,7 +101,6 @@
             </div>
 
                 <br>
-                <!-- Envios pendientes -->
       
         </div>
 
@@ -93,6 +121,23 @@
             <button id="botn" type="module"  onclick="rechazarPedido()">Rechazar</button>
         </div>
 
+
+        <div class="containerPedido  " id="pedido">
+            <h3>Pedido Entrante</h3>
+            <ul>
+                <li id="nPedido">asd Pedido:</li> 
+                <li id="cliente">Cliente:</li>
+                <li id="pedidoE">Pedido: </li>
+                <li id="precio">Pecio:</li>
+                <li id="precioEnvio">Precio Envio:</li>
+                <li id="local">Local:</li>
+                <li id="ubicacion">Ubicacion:</li>
+                <li id="fecha">Fecha: </li>
+
+            </ul>
+            <button id="boton" type="module"  onclick="aceptarPedido()">Tomar</button>
+            <button id="botn" type="module"  onclick="rechazarPedido()">Rechazar</button>
+        </div>
     <!-- </div> -->
 
 
