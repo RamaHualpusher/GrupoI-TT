@@ -3,7 +3,6 @@ const dropMenus = document.querySelectorAll('.drop-menu');
 
 
 
-
 btns.forEach(btn => {
     btn.addEventListener('click', () => {
         removeActive();
@@ -30,12 +29,15 @@ window.onclick = (e) => {
 var esconder = document.getElementById("hide");
 var formulario = document.getElementById("formulario");
 var pedido  = document.getElementById("pedido");
+var table  = document.getElementById("table");
 let temporizador;
 setTimeout(() => {
 
     esconder.style.display= "none";
     formulario.style.display= " block";
+    temporizador =setInterval(intervalTable,1000);
     temporizador =setInterval(intervalPedido,3000);
+    
   }, 3000);
   // Pedidos en un intervalo de tiempo,agrega la clase de movimiento de entrada
  function intervalPedido(){
@@ -43,6 +45,13 @@ setTimeout(() => {
   pedido.style.display= "block";
   
  }
+
+ function intervalTable(){
+  table.classList.add('animate__backInRight');
+  table.style.display= "block";
+  
+ }
+
  //eliminar div de pedido al presionar el boton, remueve la clase de movimiento de salida
  window.nonePedido = 
  function nonePedido(){
@@ -54,19 +63,18 @@ setTimeout(() => {
 
  //!Probar, ésto me tiró gitCopilot
  const cerrarSesion = document.getElementById("cerrarSesionBtn");
- window.rechazarPedido = 
+ window.cerrarSesion = 
 async function cerrarSesion() {
-  //cerrar sesion
-  let respuesta = await fetch(url+'/logout');
-  let json;
-  if (respuesta.ok) {
-    json = await respuesta.json();
-    if (json.ok) {
-      window.location.href = "index.html";
-    }
-  }
+  
+  let opcion = confirm("¿Está seguro que desea cerrar sesión?");
+  if (opcion == true) {
+    document.cookie = "cookIdUsuario=valor;expires=1 Mar 1990 00:00:00 GMT";
+    window.location.href = "login.html";
+} else {
+  
+}
+  
 
-    
  }
 
 //Cuando el boton se presione ,remueve movimiento de entrada,add el movimiento de salida,llama metodos recirsion
@@ -130,15 +138,21 @@ window.funcionMostrar = async function funcionMostrar() {
 };
 
 function leerCookie(nombre) {
-  let micookie;
-  var lista = document.cookie.split(";");
+  try {
+    let micookie;
+  var lista =  document.cookie.split(";");
   for (let i in lista) {
-    var busca = lista[i].search(nombre);
+    var busca =  lista[i].search(nombre);
     if (busca > -1) { micookie = lista[i] }
   }
-  var igual = micookie.indexOf("=");
-  var valor = micookie.substring(igual + 1);
+  var igual =  micookie.indexOf("=");
+  var valor =  micookie.substring(igual + 1);
   return valor;
+    
+  } catch (error) {
+    console.log('Error, no ha iniciado sesion');
+    window.location="login.html";
+  }
 }
 
 
@@ -225,11 +239,15 @@ window.funcionPedidoEntrante = async function funcionPedidoEntrante() {
 
 };
 
+async function main() {
 
+ await funcionMostrar();
+ await funcionPedidoEntrante();
+ await mostrarFinalizados();
 
-funcionMostrar();
-//funcionEnvioPen();
-funcionPedidoEntrante();
+}
+
+main();
 
 //
 
@@ -277,10 +295,52 @@ async function cambiarEstadoPedido(estado) {
 //          alert("Estad Agregado correctamente");
                 
    console.log(updatePedido);
-   window.open("./Map.html", "_self"); //abro nuevo html
+   if (estado==3) {
+    window.open("./Map.html", "_self"); //abro nuevo html
+    console.log('entre al if');
+   }
+   
 
      guardarCookie('cookIdPedido',idPedido,"31 Dec 2023 23:59:59 GMT") //guardamos en cookie el id del usuario 
 
 };
+
+
+let mostrarFinalizados  = async () => {
+
+  const tbody = document.querySelector('#tbl-pedidos tbody');
+  let urlPedidoEntrante = `http://${host}:${puerto}/api/orderIn/end`
+
+  console.log(urlPedidoEntrante);
+
+  let respuesta = await funcionMostrar( urlPedidoEntrante);
+  tbody.innerHTML = '';
+  for (let i = 0; i < respuesta.length; i++) {
+    
+      let fila = tbody.insertRow();
+      fila.insertCell().innerHTML = respuesta[i]['id'];
+      fila.insertCell().innerHTML = respuesta[i]['nameClient'];
+      fila.insertCell().innerHTML = respuesta[i]['nameStore'];
+      fila.insertCell().innerHTML = respuesta[i]['dayHour'];
+      fila.insertCell().innerHTML = respuesta[i]['amountShip'];
+  }
+
+  console.log(respuesta);
+};
+
+
+window.funcionMostrar = async function funcionMostrar(url) {
+  let respuesta = await fetch(url);
+  let json;
+  if (respuesta.ok) {
+      json = await respuesta.json();
+  }
+  else {
+      alert("Error-HTTP: " + respuesta.status);
+  }
+  return json;
+
+};
+
 
 

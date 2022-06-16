@@ -48,6 +48,7 @@ let latLngUsuario = L.latLng([-32.8972, -68.853448]);
 let latLngComercio = L.latLng([latComercio, lonComercio]);
 let latLngCliente = L.latLng([latCliente, lonCliente]);
 
+console.log(latLngUsuario);
 
 let ruta1 = crearRutaMark(latLngUsuario,latLngComercio);
 let ruta2 = crearRutaMark(latLngComercio,latLngCliente);
@@ -105,29 +106,31 @@ window.funcionPedidoEntrante = async function funcionPedidoEntrante() {
     json = await respuesta.json();    
 //! Aqui podes asignarle el valor del json a una variable mediante  x = json.nombre; 
 
-	latComercio = json.latStore; 
-	lonComercio = json.lonStore;
-	latCliente =json.latUser;
-    lonCliente = json.lonUser;
-	nameClient = json.nameClient;
-	description = json.description;
-	amount = json.amount;
-	amountShip = json.amountShip;
-	dayHour = json.dayHour;
-	status = json.status;
-	nameStore = json.nameStore;
-	addressClient = json.addresss[0].value;
-	addressStore = json.addresss[1].value;
+	latComercio = json[0].latStore; 
+	lonComercio = json[0].lonStore;
+	latCliente =json[0].latUser;
+    lonCliente = json[0].lonUser;
+	nameClient = json[0].nameClient;
+	description = json[0].description;
+	amount = json[0].amount;
+	amountShip = json[0].amountShip;
+	dayHour = json[0].dayHour;
+	status = json[0].status;
+	nameStore = json[0].nameStore;
+	addressClient = json[0].addressClient;
+	addressStore = json[0].addressStore;
+
+
 
 
   
-console.log(json.nameClient)
+console.log(latComercio)
 
   } else {
     alert("Error-HTTP: " + respuesta.status);
 
 };
-
+};
 //Marcamos el envío como finalizado
 
 window.cambiarEstadoPedido =
@@ -158,19 +161,25 @@ async function cambiarEstadoPedido(estado) {
 
 
 
-}
-
 function leerCookie(nombre) {
-	let micookie;
-	var lista = document.cookie.split(";");
+	try {
+	  let micookie;
+	var lista =  document.cookie.split(";");
 	for (let i in lista) {
-	  var busca = lista[i].search(nombre);
+	  var busca =  lista[i].search(nombre);
 	  if (busca > -1) { micookie = lista[i] }
 	}
-	var igual = micookie.indexOf("=");
-	var valor = micookie.substring(igual + 1);
+	var igual =  micookie.indexOf("=");
+	var valor =  micookie.substring(igual + 1);
 	return valor;
+	  
+	} catch (error) {
+	  console.log('Error, no ha iniciado sesion');
+	  window.location="login.html";
+	}
   }
+  
+  
 
 
 

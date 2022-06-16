@@ -15,9 +15,7 @@ window.registrarUsuario =
     
         nombre = document.getElementById('nombreCompleto').value; //obtengo variable del html
         contrasena = document.getElementById('contrasena').value; //obtengo variable del html
-        //email = document.getElementById('email').value; //obtengo variable del html
         usuario = document.getElementById('usuario').value; //obtengo variable del html
-        tipoUsuario = document.getElementById('tipoUsuario').value; //obtengo variable del html
 
         url = `http://${host}:${puerto}/api/users`; //url de la API correspondiente al backend
 
@@ -26,9 +24,9 @@ window.registrarUsuario =
             let user = {
                 user: usuario,
                 pass: contrasena,
-                role: tipoUsuario,
+                role: 'Delivery',
                 name: nombre
-               // email: "" //falta ingresar email
+               
               };
               
               let response = await fetch(url, {
@@ -40,9 +38,10 @@ window.registrarUsuario =
               });
               
               let result = await response.json();
-              //alert(result.message);
+            
 
               alert("Usuario Agregado correctamente");
+              window.location="index.html";
                     
         } else {
             alert("Complete nombre y contraseña por favor");
