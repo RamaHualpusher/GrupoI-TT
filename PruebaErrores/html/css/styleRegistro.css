@@ -1,0 +1,13 @@
+
+
+body{
+    /* background-image: url("../Imagen/batman.jpg");
+    background-position: left ;
+    background-repeat: no-repeat; */
+    background-color: aqua;
+}
+a:link{
+    margin-left: 10px;
+    text-decoration: none;
+}
+
