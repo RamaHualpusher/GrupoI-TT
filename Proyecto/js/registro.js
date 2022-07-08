@@ -12,12 +12,12 @@ window.registrarUsuario =
     async function registrarUsuario() {
 
         console.log('auauyauau');
-    
+
         nombre = document.getElementById('nombreCompleto').value; //obtengo variable del html
         contrasena = document.getElementById('contrasena').value; //obtengo variable del html
         usuario = document.getElementById('usuario').value; //obtengo variable del html
 
-        url = `http://${host}:${puerto}/api/users`; //url de la API correspondiente al backend
+        url = `https://${host}/api/users`; //url de la API correspondiente al backend
 
         if (validarCompleto(nombre, contrasena)) {
 
@@ -26,23 +26,23 @@ window.registrarUsuario =
                 pass: contrasena,
                 role: 'Delivery',
                 name: nombre
-               
-              };
-              
-              let response = await fetch(url, {
+
+            };
+
+            let response = await fetch(url, {
                 method: 'POST',
                 headers: {
-                  'Content-Type': 'application/json;charset=utf-8'
+                    'Content-Type': 'application/json;charset=utf-8'
                 },
                 body: JSON.stringify(user)
-              });
-              
-              let result = await response.json();
-            
+            });
 
-              alert("Usuario Agregado correctamente");
-              window.location="index.html";
-                    
+            let result = await response.json();
+
+
+            alert("Usuario Agregado correctamente");
+            window.location = "index.html";
+
         } else {
             alert("Complete nombre y contraseña por favor");
         }
@@ -52,7 +52,7 @@ window.registrarUsuario =
 
 
 
-    
+
 
 
 function validarCompleto(nombre, contrasena) {
@@ -69,7 +69,7 @@ function validarCompleto(nombre, contrasena) {
 
 
 
-function guardarCookie(nombre,valor,fecha) {
-    document.cookie = nombre+"="+valor+";expires="+fecha;
-    }
+function guardarCookie(nombre, valor, fecha) {
+    document.cookie = nombre + "=" + valor + ";expires=" + fecha;
+}
 

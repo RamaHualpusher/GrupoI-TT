@@ -1,6 +1,6 @@
-const host='pinguilivery.duckdns.org';
-const puerto='8081';
-export {host, puerto};
+const host = 'deliverybackmeto.herokuapp.com';
+const puerto = '80';
+export { host, puerto };
 
 
 
