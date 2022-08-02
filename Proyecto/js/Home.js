@@ -111,7 +111,7 @@ let url;
 let idUsuario = leerCookie('cookIdUsuario'); //traigo idUsuario desde las cookie
 
 //Muestro datos en html consultados la base datos mediante el backend
-url = `https://${host}/api/users/${idUsuario}`; //url de la API correspondiente al backend
+url = `http://${host}:${puerto}/api/users/${idUsuario}`; //url de la API correspondiente al backend
 console.log(url)
 window.funcionMostrar = async function funcionMostrar() {
 
@@ -159,7 +159,7 @@ function leerCookie(nombre) {
 
 /*
 //Muestro datos en html consultados la base datos mediante el backend
-let urlEnvio = `https://${host}:${puerto}/api/shipments/`; //url de la API correspondiente al backend
+let urlEnvio = `http://${host}:${puerto}/api/shipments/`; //url de la API correspondiente al backend
 
 window.funcionEnvioPen = async function funcionEnvioPen() {
 
@@ -186,7 +186,7 @@ window.funcionEnvioPen = async function funcionEnvioPen() {
 */
 
 // consulta pedidos entrantes
-let urlPedidoEntrante = `https://${host}/api/orderIn/`; //url de la API correspondiente al backend
+let urlPedidoEntrante = `http://${host}:${puerto}/api/orderIn/`; //url de la API correspondiente al backend
 
 window.funcionPedidoEntrante = async function funcionPedidoEntrante() {
 
@@ -272,7 +272,7 @@ window.cambiarEstadoPedido =
     console.log('id pedido ' + idPedido);
 
 
-    url = `https://${host}/api/shipments`; //url de la API correspondiente al backend
+    url = `http://${host}:${puerto}/api/shipments`; //url de la API correspondiente al backend
 
 
 
@@ -309,7 +309,7 @@ window.cambiarEstadoPedido =
 let mostrarFinalizados = async () => {
 
   const tbody = document.querySelector('#tbl-pedidos tbody');
-  let urlPedidoEntrante = `https://${host}/api/orderIn/end`
+  let urlPedidoEntrante = `http://${host}:${puerto}/api/orderIn/end`
 
   console.log(urlPedidoEntrante);
 
@@ -323,10 +323,22 @@ let mostrarFinalizados = async () => {
     fila.insertCell().innerHTML = respuesta[i]['nameStore'];
     fila.insertCell().innerHTML = respuesta[i]['dayHour'];
     fila.insertCell().innerHTML = respuesta[i]['amountShip'];
+    fila.insertCell().innerHTML = '<td><input type="button" class="borrar" value="Mostrar" /></td>'; //indicamos el botón para mostrar el recorrido
   }
 
   console.log(respuesta);
 };
+
+//Encontrar el id de la fila seleccionada por el boton
+$(function () {
+  $(document).on('click', '.borrar', function (event) {
+    let idSeleccionado = $(this).parents("tr").find("td").eq(0).text();
+    console.log('Aprete en ver ' + idSeleccionado);
+
+    mostrarRecorrido(idSeleccionado);
+  });
+});
+
 
 
 window.funcionMostrar = async function funcionMostrar(url) {
@@ -344,3 +356,23 @@ window.funcionMostrar = async function funcionMostrar(url) {
 
 
 
+//Mostramos recorrido del delivery
+window.mostrarRecorrido =
+  async function mostrarRecorrido(idSeleccionado) {
+
+    console.log('id pedido ' + idSeleccionado);
+
+
+    url = `http://${host}:${puerto}/api/shipments`; //url de la API correspondiente al backend
+
+
+
+
+    window.open("/js/consulta/Map.html", "_self"); //abro nuevo html
+
+
+
+    console.log('Guade cookie del id del pedido');
+    guardarCookie('cookIdPedido', idSeleccionado, "31 Dec 2023 23:59:59 GMT") //guardamos en cookie el id del usuario 
+
+  };

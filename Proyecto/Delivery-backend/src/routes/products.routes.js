@@ -10,18 +10,19 @@ import {
   createNewStore,
   getStoreById,
   deleteStoreById,
-  
+
   getClient,
   createNewClient,
   getClientById,
   deleteClientById,
-  
+
   createNewSale,
   getSaleById,
   getShipment_0,
   getOrdernIn,
   UpdateShipments,
   getOrdernInMap,
+  getOrdernInMapR,
   getOrderEnd
 } from "../controllers/products.controller.js";
 
@@ -51,6 +52,7 @@ router.get("/shipments", getShipment_0);
 router.get("/orderIn", getOrdernIn);
 router.post("/shipments", UpdateShipments);
 router.get("/orderIn/map/:idPedido", getOrdernInMap);
+router.get("/orderIn/mapR/:idPedido", getOrdernInMapR);
 router.get("/orderIn/end", getOrderEnd);
 
 

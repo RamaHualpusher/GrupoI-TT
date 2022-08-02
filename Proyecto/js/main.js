@@ -96,7 +96,7 @@ window.mostrarMapa =
 let idPedido = leerCookie('cookIdPedido'); //traigo idUsuario desde las cookie
 console.log('Este es el id del pedido: ' + idPedido)
 
-let urlPedidoEntrante = `https://${host}/api/orderIn/map/${idPedido}`; //url de la API correspondiente al backend
+let urlPedidoEntrante = `http://${host}:${puerto}/api/orderIn/map/${idPedido}`; //url de la API correspondiente al backend
 window.funcionPedidoEntrante = async function funcionPedidoEntrante() {
 
 	console.log('URL ENVIADA AL BACK ' + urlPedidoEntrante)
@@ -137,7 +137,7 @@ window.cambiarEstadoPedido =
 	async function cambiarEstadoPedido(estado) {
 
 
-		let url = `https://${host}/api/shipments`; //url de la API correspondiente al backend
+		let url = `http://${host}:${puerto}/api/shipments`; //url de la API correspondiente al backend
 		let updatePedido = {
 			status: estado,
 			idPedido: idPedido
@@ -155,7 +155,7 @@ window.cambiarEstadoPedido =
 
 		alert('Ha finalizado el envío correctamente!');
 
-		window.open("./home.html", "_self"); //abro nuevo html
+		window.open("./Home.html", "_self"); //abro nuevo html
 
 	};
 

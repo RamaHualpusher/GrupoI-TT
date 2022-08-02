@@ -1,9 +1,9 @@
 import { host, puerto } from "./config.js";
 let url;
-let idUsuario = leerCookie('cookIdUsuario'); //traigo idUsuario desde las cookie
+let idUsuario =leerCookie('cookIdUsuario'); //traigo idUsuario desde las cookie
 
 //Muestro datos en html consultados la base datos mediante el backend
-url = `https://${host}/api/users/${idUsuario}`; //url de la API correspondiente al backend
+url = `http://${host}:${puerto}/api/users/${idUsuario}`; //url de la API correspondiente al backend
 console.log(url)
 window.funcionMostrar = async function funcionMostrar() {
 

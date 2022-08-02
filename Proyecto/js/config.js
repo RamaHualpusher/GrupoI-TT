@@ -1,5 +1,5 @@
-const host = 'deliverybackmeto.herokuapp.com';
-const puerto = '80';
+const host = 'localhost';
+const puerto = '8081';
 export { host, puerto };
 
 

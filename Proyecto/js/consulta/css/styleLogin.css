@@ -1,0 +1,45 @@
+
+
+body{
+    /* background-image: url("../Imagen/batman.jpg");
+    background-position: left ;
+    background-repeat: no-repeat; */
+    background-color: rgb(74, 203, 247);
+}
+a:link{
+    margin-left: 10px;
+    text-decoration: none;
+}
+.botones_container .boton-cancelar{
+    margin: 0 0 0 10px;
+    text-decoration: none;    
+}
+.botones_container .boton-cancelar a{
+    color: white;
+    
+    border-radius: 5px;
+    padding: 5px;
+    text-decoration: none;
+}
+.navbar {
+    width: 100%;
+    padding: 0;
+    
+  }
+.navbar-brand{
+    padding: 0px 10px;
+    margin: 0;
+   
+ }
+ .navbar-brand a{
+    color: rgb(0, 0, 0);
+ }
+ .navbar-brand:hover{
+    /* background-color: rgb(226, 226, 226); */
+   box-shadow: 2px 1px 19px 1px rgba(0, 0, 0, 0.15);
+   -webkit-box-shadow: 2px 1px 19px 1px rgba(0, 0, 0, 0.15);
+   -moz-box-shadow: 2px 1px 19px 1px rgba(0, 0, 0, 0.15);
+ }
+ /* .container-form{
+     padding: 50px auto;
+ } */

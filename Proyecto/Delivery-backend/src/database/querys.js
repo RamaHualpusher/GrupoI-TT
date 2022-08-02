@@ -4,7 +4,7 @@ export const querys = {
   getUsersById: "SELECT id, name, role, [user] FROM users WHERE id = @idUser",
   addNewUser: "INSERT INTO users VALUES(@user, @pass, @role, @name,'','');",
   deleteUser: "DELETE FROM users WHERE pass = @Pass AND [user]=@User",
-  
+
   getAllStore: "SELECT * FROM store",
   getStoreById: "SELECT id, name, description, lon, lat, address FROM store WHERE id = @Id",
   addNewStore: "INSERT INTO store VALUES(@name, @description, @lon, @lat, @address);",
@@ -35,10 +35,12 @@ export const querys = {
   UpdateShipmentsStatus: "UPDATE shipment SET status=@status  where id=@idPedido ;",
 
   getAllOrderInMap: "SELECT  top 1 B.id , D.name 'nameClient' ,A.description, A.amount,B.amount 'amountShip', (Select CONVERT(varchar,A.dayHour,100) 'dayHour')'dayHour',C.description'status',E.name 'nameStore',E.addresss'addressStore',  F.address 'addressClient',E.lon 'lonStore', E.lat 'latStore', D.lon 'lonUser', D.lat 'latUser'   FROM sale A  INNER JOIN shipment B  ON A.id = B.codSale INNER JOIN status C  ON B.status = C.status  INNER JOIN users D  ON  B.codUser= D.id  INNER JOIN store E ON  E.id= b.codStore   INNER JOIN client F ON  D.id= F.codUser where  B.status=3 and B.id=@idPedido ORDER  BY A.dayHour desc",
-  
+
+  getAllOrderInMapR: "SELECT  top 1 B.id , D.name 'nameClient' ,A.description, A.amount,B.amount 'amountShip', (Select CONVERT(varchar,A.dayHour,100) 'dayHour')'dayHour',C.description'status',E.name 'nameStore',E.addresss'addressStore',  F.address 'addressClient',E.lon 'lonStore', E.lat 'latStore', D.lon 'lonUser', D.lat 'latUser'   FROM sale A  INNER JOIN shipment B  ON A.id = B.codSale INNER JOIN status C  ON B.status = C.status  INNER JOIN users D  ON  B.codUser= D.id  INNER JOIN store E ON  E.id= b.codStore   INNER JOIN client F ON  D.id= F.codUser where   B.id=@idPedido ORDER  BY A.dayHour desc",
+
   getAllOrderEnd: "SELECT   B.id , D.name 'nameClient' ,A.description, A.amount,B.amount 'amountShip', (Select CONVERT(varchar,A.dayHour,20) 'dayHour')'dayHour',C.description'status',E.name 'nameStore',E.addresss'addressStore',  F.address 'addressClient',E.lon 'lonStore', E.lat 'latStore', D.lon 'lonUser', D.lat 'latUser'   FROM sale A  INNER JOIN shipment B  ON A.id = B.codSale INNER JOIN status C  ON B.status = C.status  INNER JOIN users D  ON  B.codUser= D.id  INNER JOIN store E ON  E.id= b.codStore   INNER JOIN client F ON  D.id= F.codUser where  B.status=1 ORDER  BY A.dayHour desc",
 
-  
+
 
 };
 
